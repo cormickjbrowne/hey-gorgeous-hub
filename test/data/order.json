@@ -1,0 +1,355 @@
+{
+  "id": 2707308999,
+  "email": "cormick@heygorgeous.com",
+  "closed_at": null,
+  "created_at": "2016-03-16T16:38:24-04:00",
+  "updated_at": "2016-03-16T16:38:25-04:00",
+  "number": 27,
+  "note": "",
+  "token": "71f9562e7bac78c5ead914e373f4f454",
+  "gateway": "bogus",
+  "test": true,
+  "total_price": "185.02",
+  "subtotal_price": "159.94",
+  "total_weight": 2155,
+  "total_tax": "15.08",
+  "taxes_included": false,
+  "currency": "USD",
+  "financial_status": "authorized",
+  "confirmed": true,
+  "total_discounts": "0.00",
+  "total_line_items_price": "159.94",
+  "cart_token": "5955425d8a2be88da22faa1cf3808d32",
+  "buyer_accepts_marketing": false,
+  "name": "#1027",
+  "referring_site": "",
+  "landing_site": "\/",
+  "cancelled_at": null,
+  "cancel_reason": null,
+  "total_price_usd": "185.02",
+  "checkout_token": "48867f4033a9b1ad62eec70133372d00",
+  "reference": null,
+  "user_id": null,
+  "location_id": null,
+  "source_identifier": null,
+  "source_url": null,
+  "processed_at": "2016-03-16T16:38:24-04:00",
+  "device_id": null,
+  "browser_ip": "71.190.64.178",
+  "landing_site_ref": null,
+  "order_number": 1027,
+  "discount_codes": [
+
+  ],
+  "note_attributes": [
+
+  ],
+  "payment_gateway_names": [
+    "bogus"
+  ],
+  "processing_method": "direct",
+  "checkout_id": 6621761991,
+  "source_name": "web",
+  "fulfillment_status": null,
+  "tax_lines": [
+    {
+      "title": "NY State Tax",
+      "price": "6.80",
+      "rate": 0.04
+    },
+    {
+      "title": "Kings County Tax",
+      "price": "8.28",
+      "rate": 0.04875
+    }
+  ],
+  "tags": "",
+  "contact_email": "cormick@heygorgeous.com",
+  "line_items": [
+    {
+      "id": 4663565319,
+      "variant_id": 6442792257,
+      "title": "Avery Jegging",
+      "quantity": 1,
+      "price": "39.98",
+      "grams": 680,
+      "sku": "AME-DNM-AVE-BLU-22",
+      "variant_title": "22 \/ Avery",
+      "vendor": "Amethyst Jeans",
+      "fulfillment_service": "manual",
+      "product_id": 2020133761,
+      "requires_shipping": true,
+      "taxable": true,
+      "gift_card": false,
+      "name": "Avery Jegging - 22 \/ Avery",
+      "variant_inventory_management": "shopify",
+      "properties": [
+
+      ],
+      "product_exists": true,
+      "fulfillable_quantity": 1,
+      "total_discount": "0.00",
+      "fulfillment_status": null,
+      "tax_lines": [
+        {
+          "title": "NY State Tax",
+          "price": "1.60",
+          "rate": 0.04
+        },
+        {
+          "title": "Kings County Tax",
+          "price": "1.94",
+          "rate": 0.04875
+        }
+      ],
+      "origin_location": {
+        "id": 519953479,
+        "country_code": "US",
+        "province_code": "NY",
+        "name": "dev-gorgeous-2",
+        "address1": "25 Jefferson Ave",
+        "address2": "",
+        "city": "Brooklyn",
+        "zip": "11238"
+      },
+      "destination_location": {
+        "id": 998930055,
+        "country_code": "US",
+        "province_code": "NY",
+        "name": "Cormick Browne",
+        "address1": "25 Jefferson Ave Apt #3",
+        "address2": "",
+        "city": "Brooklyn",
+        "zip": "11238"
+      }
+    },
+    {
+      "id": 4663565383,
+      "variant_id": 6442717569,
+      "title": "Arlene Jegging",
+      "quantity": 1,
+      "price": "39.98",
+      "grams": 680,
+      "sku": "AME-DNM-ARL-BLU-24",
+      "variant_title": "24 \/ Arlene",
+      "vendor": "Amethyst Jeans",
+      "fulfillment_service": "manual",
+      "product_id": 2020103745,
+      "requires_shipping": true,
+      "taxable": true,
+      "gift_card": false,
+      "name": "Arlene Jegging - 24 \/ Arlene",
+      "variant_inventory_management": "shopify",
+      "properties": [
+
+      ],
+      "product_exists": true,
+      "fulfillable_quantity": 1,
+      "total_discount": "0.00",
+      "fulfillment_status": null,
+      "tax_lines": [
+        {
+          "title": "NY State Tax",
+          "price": "1.60",
+          "rate": 0.04
+        },
+        {
+          "title": "Kings County Tax",
+          "price": "1.95",
+          "rate": 0.04875
+        }
+      ],
+      "origin_location": {
+        "id": 519953479,
+        "country_code": "US",
+        "province_code": "NY",
+        "name": "dev-gorgeous-2",
+        "address1": "25 Jefferson Ave",
+        "address2": "",
+        "city": "Brooklyn",
+        "zip": "11238"
+      },
+      "destination_location": {
+        "id": 998930055,
+        "country_code": "US",
+        "province_code": "NY",
+        "name": "Cormick Browne",
+        "address1": "25 Jefferson Ave Apt #3",
+        "address2": "",
+        "city": "Brooklyn",
+        "zip": "11238"
+      }
+    },
+    {
+      "id": 4663565447,
+      "variant_id": 6442321089,
+      "title": "Anaconda White Slashed Joggers",
+      "quantity": 1,
+      "price": "79.98",
+      "grams": 794,
+      "sku": "17S-JEA-AWS-WHT-12",
+      "variant_title": "12 \/ Anaconda White",
+      "vendor": "17 Sundays",
+      "fulfillment_service": "manual",
+      "product_id": 2020024321,
+      "requires_shipping": true,
+      "taxable": true,
+      "gift_card": false,
+      "name": "Anaconda White Slashed Joggers - 12 \/ Anaconda White",
+      "variant_inventory_management": "shopify",
+      "properties": [
+
+      ],
+      "product_exists": true,
+      "fulfillable_quantity": 1,
+      "total_discount": "0.00",
+      "fulfillment_status": null,
+      "tax_lines": [
+        {
+          "title": "NY State Tax",
+          "price": "3.20",
+          "rate": 0.04
+        },
+        {
+          "title": "Kings County Tax",
+          "price": "3.90",
+          "rate": 0.04875
+        }
+      ],
+      "origin_location": {
+        "id": 519953479,
+        "country_code": "US",
+        "province_code": "NY",
+        "name": "dev-gorgeous-2",
+        "address1": "25 Jefferson Ave",
+        "address2": "",
+        "city": "Brooklyn",
+        "zip": "11238"
+      },
+      "destination_location": {
+        "id": 998930055,
+        "country_code": "US",
+        "province_code": "NY",
+        "name": "Cormick Browne",
+        "address1": "25 Jefferson Ave Apt #3",
+        "address2": "",
+        "city": "Brooklyn",
+        "zip": "11238"
+      }
+    }
+  ],
+  "shipping_lines": [
+    {
+      "id": 2335823559,
+      "title": "Standard Shipping",
+      "price": "10.00",
+      "code": "Standard Shipping",
+      "source": "shopify",
+      "phone": null,
+      "tax_lines": [
+        {
+          "title": "NY State Tax",
+          "price": "0.40",
+          "rate": 0.04
+        },
+        {
+          "title": "Kings County Tax",
+          "price": "0.49",
+          "rate": 0.04875
+        }
+      ]
+    }
+  ],
+  "billing_address": {
+    "first_name": "Cormick",
+    "address1": "25 Jefferson Ave Apt #3",
+    "phone": "",
+    "city": "Brooklyn",
+    "zip": "11238",
+    "province": "New York",
+    "country": "United States",
+    "last_name": "Browne",
+    "address2": "",
+    "company": "",
+    "latitude": 40.682755,
+    "longitude": -73.956518,
+    "name": "Cormick Browne",
+    "country_code": "US",
+    "province_code": "NY"
+  },
+  "shipping_address": {
+    "first_name": "Cormick",
+    "address1": "25 Jefferson Ave Apt #3",
+    "phone": "",
+    "city": "Brooklyn",
+    "zip": "11238",
+    "province": "New York",
+    "country": "United States",
+    "last_name": "Browne",
+    "address2": "",
+    "company": "",
+    "latitude": 40.682755,
+    "longitude": -73.956518,
+    "name": "Cormick Browne",
+    "country_code": "US",
+    "province_code": "NY"
+  },
+  "fulfillments": [
+
+  ],
+  "client_details": {
+    "browser_ip": "71.190.64.178",
+    "accept_language": "en-US,en;q=0.8",
+    "user_agent": "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/49.0.2623.87 Safari\/537.36",
+    "session_hash": "c42178cf6b32715c9117f85cf25f4452",
+    "browser_width": 1680,
+    "browser_height": 911
+  },
+  "refunds": [
+
+  ],
+  "payment_details": {
+    "credit_card_bin": "1",
+    "avs_result_code": null,
+    "cvv_result_code": null,
+    "credit_card_number": "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 1",
+    "credit_card_company": "Bogus"
+  },
+  "customer": {
+    "id": 1168372545,
+    "email": "cormick@heygorgeous.com",
+    "accepts_marketing": false,
+    "created_at": "2015-08-13T13:35:28-04:00",
+    "updated_at": "2016-03-16T16:38:24-04:00",
+    "first_name": "Cormick",
+    "last_name": "Browne",
+    "orders_count": 0,
+    "state": "disabled",
+    "total_spent": "0.00",
+    "last_order_id": null,
+    "note": null,
+    "verified_email": true,
+    "multipass_identifier": null,
+    "tax_exempt": false,
+    "tags": "",
+    "last_order_name": null,
+    "default_address": {
+      "id": 2921156551,
+      "first_name": "Cormick",
+      "last_name": "Browne",
+      "company": "",
+      "address1": "25 Jefferson Ave Apt #3",
+      "address2": "",
+      "city": "Brooklyn",
+      "province": "New York",
+      "country": "United States",
+      "zip": "11238",
+      "phone": "",
+      "name": "Cormick Browne",
+      "province_code": "NY",
+      "country_code": "US",
+      "country_name": "United States",
+      "default": true
+    }
+  }
+}
