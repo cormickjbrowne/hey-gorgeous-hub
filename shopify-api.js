@@ -53,7 +53,7 @@ module.exports = function (config) {
             wrapper[type] = objectData;
             objectData = wrapper;
         }
-        console.log('calling...', path);
+
         shopifyApi[requestType](path, objectData, function (err, data) {
             if (err || !data || data.errors || data.error) {
                 deferred.reject(err || data);
