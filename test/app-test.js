@@ -7,7 +7,7 @@ var request = require('supertest');
 
 describe('Express server', function () {
     var http, server;
-
+    this.timeout(15000);
     beforeEach(function () {
         server = require('../app').listen(3000);
     });
@@ -16,15 +16,22 @@ describe('Express server', function () {
         server.close();
     });
 
-    describe('Sending a POST to /products', function () {
+    describe('Sending a POST to /products/update', function () {
+        var product;
+
+        beforeEach(function () {
+            product = require('../test/data/product.json')
+        });
+
         it('should return \'products\'', function (done) {
             request(server)
-              .post('/products')
-              .expect(200, "products", done);
+              .post('/products/update')
+              .send(product)
+              .expect(200, done);
         });
     });
 
-    describe('Sending a POST to /orders', function () {
+    describe('Sending a POST to /orders/create', function () {
         var order;
 
         beforeEach(function () {
@@ -33,32 +40,9 @@ describe('Express server', function () {
 
         it('should return an array of product_ids', function (done) {
             request(server)
-              .post('/orders')
+              .post('/orders/create')
               .send(order)
-              .expect(200, [
-                [
-                    6442792001,
-                    6442792065,
-                    6442792129,
-                    6442792193,
-                    6442792257,
-                    6442792321
-                ],[
-                    6442717249,
-                    6442717313,
-                    6442717377,
-                    6442717441,
-                    6442717505,
-                    6442717569
-                ],[
-                    6442321089,
-                    6442321217,
-                    6442321345,
-                    6442321473,
-                    6442321601,
-                    6442321665,
-                    6442321729
-                ]], done);
+              .expect(200, done);
         });
     });
 });
