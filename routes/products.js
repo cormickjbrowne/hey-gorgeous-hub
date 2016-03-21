@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Q = require('q');
 
-var config = require('../config.json')[process.env.NODE_ENV || 'development'];
+var config = require('../config.js');
 var shopifyAPI = require('../shopify-api');
 var shopify = shopifyAPI(config);
 
