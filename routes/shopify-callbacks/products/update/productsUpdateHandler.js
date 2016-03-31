@@ -1,12 +1,10 @@
-var express = require('express');
-var router = express.Router();
 var Q = require('q');
 
 var config = require('../config.js');
 var shopifyAPI = require('../shopify-api');
 var shopify = shopifyAPI(config);
 
-router.post('/update', function (req, res) {
+var productsUpdateHandler = function (req, res) {
     var product, variants;
 
     product = req.body;
@@ -107,6 +105,6 @@ router.post('/update', function (req, res) {
             res.send(err);
         });
     });
-});
+}
 
-module.exports = router;
+module.exports = productsUpdateHandler;

@@ -1,13 +1,32 @@
-var express = require('express');
-var router = express.Router();
 var Q = require('q');
 
-var config = require('../config.js');
-var shopifyAPI = require('../shopify-api');
+var config = require('../../../../config.js');
+var shopifyAPI = require('../../../../shopify-api');
 var shopify = shopifyAPI(config);
 
-router.post('/create', function (req, res) {
-    var products;
+var ordersCreateHandler = function (req, res, next) {
+    var err, products, i, line_items;
+
+    if (!req.body) { err = 'Reqest body is missing'; res.status(400); res.send(err); return next(err, null); }
+    if (!req.body.line_items) { err = 'Request body is missing line_items'; res.status(400); res.send(err); return next(err, null); }
+
+    line_items = req.body.line_items;
+
+    if (!Array.isArray(line_items)) { err = 'Line_items is not an array'; res.status(400); res.send(err); return  next(err, null); }
+
+    for (i = 0; i < line_items.length; i++) {
+        if (!line_items[i].product_id) {
+            err = 'Line item is missing product_id';
+            res.status(400);
+            res.send(err);
+            return next(err, null);
+        } else if (!line_items[i].variant_id) {
+            err = 'Line item is missing variant_id';
+            res.status(400);
+            res.send(err);
+            return next(err, null);
+        }
+    }
 
     products = req.body.line_items.map(function (lineItem) {
         return {
@@ -35,25 +54,30 @@ router.post('/create', function (req, res) {
             shopify.callShopify('get', ['metafields'], options)
         ])
         .spread(function (product, metafields) {
+            if (!metafields.length) {
+                deferred.reject({
+                    error: 'Size Metafield Not Found',
+                    code: 200
+                });
+            }
+            
             var i, sizes, variant, productCondensed;
 
             variant = {
                 id: productPartial.variants[0].id,
             }
 
+            variant.sizes = metafields[0].value
+                .split(',')
+                .map(function (size) {
+                    return size.trim();
+                });
+
             for (i = 0; i < product.variants.length; i++) {
                 if (product.variants[i].id === variant.id) {
                     variant.inventory_policy = product.variants[i].inventory_policy;
                     variant.inventory_quantity = product.variants[i].inventory_quantity;
                 }
-            }
-
-            if (metafields.length) {
-                variant.sizes = metafields[0].value
-                    .split(',')
-                    .map(function (size) {
-                        return size.trim();
-                    });
             }
 
             productCondensed = {
@@ -65,7 +89,7 @@ router.post('/create', function (req, res) {
             deferred.resolve(productCondensed);
         })
         .catch(function (err) {
-            console.error('Received error at creating productCondensed');
+            //console.error('Received error at creating productCondensed');
             deferred.reject(err);
         });
 
@@ -119,13 +143,15 @@ router.post('/create', function (req, res) {
         })
         res.status(200);
         res.send(productPartials);
+        next(null, productPartials);
     })
     .catch(function (err) {
-        console.error('Receiving error, sending to client');
-        console.error(err);
-        res.status(500);
-        res.send(err);
+        //console.error('Receiving error, sending to client');
+        //console.error(JSON.stringify(err, null, 2));
+        res.status(err.code);
+        res.send(err.error);
+        next(err, null);
     });
-});
+}
 
-module.exports = router;
+module.exports = ordersCreateHandler;

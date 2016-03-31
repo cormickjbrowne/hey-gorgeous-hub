@@ -4,16 +4,14 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var ordersRoute = require('./routes/orders');
-var productsRoute = require('./routes/products');
+var shopifyCallbacksRoute = require('./routes/shopify-callbacks');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use('/orders', ordersRoute);
-app.use('/products', productsRoute);
+app.use('/shopify-callbacks', shopifyCallbacksRoute);
 
-app.use(function(req,res) {
+app.use(function (req,res) {
     res.status(404);
     res.send('Not Found');
 });
