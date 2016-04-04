@@ -41,7 +41,13 @@ function productsUpdateHandler (req, res) {
         product.variants = variants;
 
         product = utils.removeAllSizeTags(product);
+
+        console.log('product without size tags:', product);
+
         product = utils.addInStockSizeTags(product);
+
+        console.log('product with size tags added back:', product);
+
         product = {
             id: product.id,
             tags: product.tags
@@ -62,7 +68,7 @@ function productsUpdateHandler (req, res) {
     .catch(function (err) {
         res.status(500);
         res.send(err);
-    });;
+    });
 }
 
 module.exports = productsUpdateHandler;
