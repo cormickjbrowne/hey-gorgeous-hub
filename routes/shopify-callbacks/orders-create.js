@@ -1,7 +1,7 @@
 var Q = require('q');
 
 var config = require('../../config.js');
-var shopifyAPI = require('../../shopify-api.js');
+var shopifyAPI = require('../../lib/shopify-api.js');
 var shopify = shopifyAPI(config);
 var utils = require('../../lib/utils.js');
 
@@ -44,7 +44,7 @@ function loadDatafromShopify (product) {
             variant.inventory_quantity = variantsDataHashed[id].inventory_quantity;
 
             if (!variant.metafields) { variant.metafields = []; }
-            variant.metafields.push(metafieldsDataHashed[id]);
+            if (metafieldsDataHashed[id]) { variant.metafields.push(metafieldsDataHashed[id]); }
         });
 
         deferred.resolve(product);
@@ -88,6 +88,7 @@ function ordersCreateHandler (req, res, next) {
         res.send(products);
     })
     .catch(function (err) {
+        console.log(err);
         res.status(500);
         res.send(err);
     });

@@ -1,7 +1,7 @@
 var Q = require('q');
 
 var config = require('../../config.js');
-var shopifyAPI = require('../../shopify-api.js');
+var shopifyAPI = require('../../lib/shopify-api.js');
 var shopify = shopifyAPI(config);
 var utils = require('../../lib/utils.js');
 
