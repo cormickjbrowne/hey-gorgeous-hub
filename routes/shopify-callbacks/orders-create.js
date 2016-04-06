@@ -86,7 +86,7 @@ function ordersCreateHandler (req, res, next) {
             }
         });
 
-        console.log('PUT Product:', product);
+        console.log('PUT Product:', products);
 
         res.status(200);
         res.send(products);
