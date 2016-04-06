@@ -59,6 +59,8 @@ function loadDatafromShopify (product) {
 function ordersCreateHandler (req, res, next) {
     var order, products;
 
+    console.log('Received orders/create callback.');
+
     order = req.body;
 
     products = order.line_items
@@ -83,6 +85,8 @@ function ordersCreateHandler (req, res, next) {
                 tags: product.tags
             }
         });
+
+        console.log('PUT Product:', product);
 
         res.status(200);
         res.send(products);

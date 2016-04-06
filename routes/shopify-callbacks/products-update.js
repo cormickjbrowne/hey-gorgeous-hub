@@ -29,7 +29,9 @@ function loadDatafromShopify (variant) {
 
 function productsUpdateHandler (req, res) {
     var product, variants;
-    console.log("HANDLING PRODUCTS UPDATE!");
+
+    console.log('Received products/update callback.');
+
     product = req.body;
 
     variants = product.variants.map(loadDatafromShopify);
@@ -42,11 +44,11 @@ function productsUpdateHandler (req, res) {
 
         product = utils.removeAllSizeTags(product);
 
-        console.log('product without size tags:', product);
+        // console.log('product without size tags:', product);
 
         product = utils.addInStockSizeTags(product);
 
-        console.log('product with size tags added back:', product);
+        // console.log('product with size tags added back:', product);
 
         product = {
             id: product.id,
@@ -61,6 +63,8 @@ function productsUpdateHandler (req, res) {
             id: product.id,
             tags: product.tags
         };
+
+        console.log('PUT Product:', product);
 
         res.status(200);
         res.send(product);
