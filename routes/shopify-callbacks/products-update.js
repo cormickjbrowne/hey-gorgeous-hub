@@ -34,6 +34,8 @@ function productsUpdateHandler (req, res) {
 
     console.log('Received products/update callback.');
     console.log('product:', JSON.stringify(product, null, 2));
+    res.status(202);
+    res.send('Accepted');
 
     variants = product.variants.map(loadDatafromShopify);
 
@@ -59,20 +61,16 @@ function productsUpdateHandler (req, res) {
         return shopify.putProduct(product.id, product);
     })
     .then(function (product) {
-
         product = {
             id: product.id,
             tags: product.tags
         };
 
+        console.log('Success!');
         console.log('PUT Product:', product);
-
-        res.status(200);
-        res.send(product);
     })
     .catch(function (err) {
-        res.status(500);
-        res.send(err);
+        console.error(err);
     });
 }
 

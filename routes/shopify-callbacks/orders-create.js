@@ -63,6 +63,8 @@ function ordersCreateHandler (req, res, next) {
 
     console.log('Received orders/create callback.');
     console.log('order:', JSON.stringify(order, null, 2));
+    res.status(202);
+    res.send('Accepted');
 
     products = order.line_items
                 .map(buildEmptyProductVariant)
@@ -87,15 +89,11 @@ function ordersCreateHandler (req, res, next) {
             }
         });
 
+        console.log('Success!');
         console.log('PUT Product:', products);
-
-        res.status(200);
-        res.send(products);
     })
     .catch(function (err) {
-        console.log(err);
-        res.status(500);
-        res.send(err);
+        console.error(err);
     });
 }
 
