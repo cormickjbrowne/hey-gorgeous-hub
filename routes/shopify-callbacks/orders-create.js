@@ -59,9 +59,10 @@ function loadDatafromShopify (product) {
 function ordersCreateHandler (req, res, next) {
     var order, products;
 
-    console.log('Received orders/create callback.');
-
     order = req.body;
+
+    console.log('Received orders/create callback.');
+    console.log('order:', JSON.stringify(order, null, 2));
 
     products = order.line_items
                 .map(buildEmptyProductVariant)

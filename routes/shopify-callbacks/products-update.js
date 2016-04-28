@@ -30,9 +30,10 @@ function loadDatafromShopify (variant) {
 function productsUpdateHandler (req, res) {
     var product, variants;
 
-    console.log('Received products/update callback.');
-
     product = req.body;
+
+    console.log('Received products/update callback.');
+    console.log('product:', JSON.stringify(product, null, 2));
 
     variants = product.variants.map(loadDatafromShopify);
 
